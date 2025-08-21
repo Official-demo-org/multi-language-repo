@@ -25,6 +25,7 @@ def home():
     return render_template('index.html')
  
 # Vulnerable Login - SQL Injection
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
