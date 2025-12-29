@@ -83,6 +83,12 @@ module Clearance
     end
 
     # @api private
+    def redirect_back_or(default, **options)
+      redirect_to(return_to || default, **options)
+      clear_return_to
+    end
+    
+    # @api private
     def return_to
       if return_to_url
         uri = URI.parse(return_to_url)
